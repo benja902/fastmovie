@@ -657,7 +657,7 @@ footer .logo{
     border-radius: 50%;
     border: 1px solid #dadada48;
     z-index: 3;
-    background-color: rgba(255,0,0,0.185);
+    background-color: rgba(10, 162, 192,0.185);
     position: relative;
 }
 .play-btn a{
