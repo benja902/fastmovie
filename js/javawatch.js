@@ -34,4 +34,4 @@ $('.play-btn a').click(function(){
 $('.close-movie').click(function(){
     $('#m-video')[0].pause();
 });
-const player = videojs('video-player');
+// const player = videojs('video-player');
