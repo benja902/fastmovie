@@ -1,19 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reproductor M3U8</title>
-<!-- <link href="https://vjs.zencdn.net/7.15.4/video-js.css" rel="stylesheet">
-<script src="https://vjs.zencdn.net/7.15.4/video.min.js"></script> -->
+<!--==Title==================================-->
+<title>Barbie  - HDD</title>
+<!--Stylesheet(CSS)==========================-->
+<link rel="stylesheet" href="css/style.css"/>
+<!--==Fav-icon===============================-->
+<link rel="shortcut icon" href="images/ico.png"/>
+<!--==Import-poppins-font====================-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<!--==Import-Monoton-Font====================-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+<!--==Using-Font-Awesome======================-->
+<script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+<script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js">
+</script>
 </head>
 <body>
-<video id="video-player" class="video-js vjs-default-skin" controls>
-  <source src="https://storage.googleapis.com/barbie9/feee1445c42a46a6a9f9329baf09778c/bar.m3u8" type="application/x-mpegURL">
-  Tu navegador no admite la reproducción de videos.
-</video>
-<script>
-  const player = videojs('video-player');
-</script>
+    <!--==Scroll-Progress-bar=========================-->
+    <div id="progress">
+        <span id="progress-value"></span>
+    </div>
+    <!--==Navigation===================================-->
+    <nav class="navigation">
+        <!--menu-btn--------------->
+        <input type="checkbox" class="menu-btn" id="menu-btn">
+        <label for="menu-btn" class="menu-icon">
+            <span class="nav-icon"></span>
+        </label>
+        <!--logo------------------->
+        <a href="index.html" class="logo">
+            <img src="./images/fast.png" alt="">
+        </a>
+        <!--menu------------------->
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Genre</a></li>
+            <li><a href="#">TV Shows</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <!--Search-box------------->
+        <form action="" class="search-box">
+            <!--input-->
+            <input type="text" name="search" placeholder="Search Movie" class="search-input" required/>
+            <!--btn-->
+            <button type="submit">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+    </nav>
+    <!--nav-end-->
+    <!--==Movie-Banner=========================================-->
+    <section class="movie-banner">
+        <!--==img==================================-->
+        <div class="m-banner-img">
+            <img src="./images/bar.jpeg" alt="">
+        </div>
+        <!--content================================-->
+        <div class="banner-container">
+            <!--title-container*******************----->
+            <div class="title-container">
+                <!--title-top===============-->
+                <div class="title-top">
+                <!--title----->
+                <div class="movie-title">
+                    <h1>Barbie</h1>
+                </div>
+                <!--more-about-movie-->
+                <div class="more-about-movie">
+                    <span class="quality">Full HD</span>
+                    <div class="rating">
+                        8.2 <img src="images/IMDb-icon.png" alt="imbd">
+                    </div>
+                    <span>9 Junio 2023</span>
+                    <span>87min</span>
+                </div>
+                <!--language--------->
+                <div class="language">
+                    <span>Español</span>
+                </div>
+                </div>
+                <!--Title-botttom==========================-->
+                <div class="title-bottom">
+                    <!--category------->
+                    <div class="category">
+                        <strong>Category</strong><br/>
+                        <a href="#">Accion</a>,<a href="#">Familia</a>,<a href="#">Thriller</a>
+                    </div>
+                    <!--trailer-btn---->
+                    <a href="https://www.youtube.com/watch?v=ZgQkEf3dQ08" class="watch-btn">Watch Trailer</a>
+                </div>
+            </div>
+            <!--play-btn******************************--->
+            <div class="play-btn-container">
+                <div class="play-btn">
+                    <a href="javascript:void">
+                        <i class="fas fa-play"></i>
+                    </a>
+                </div>
+            </div>
+            <!--Video/full-Movie***************************-->
+            <div id="play" class="play">
+                <!--close-btn--->
+                <a href="javascript:void" class="close-movie">
+                    <i class="fas fa-times"></i>
+                </a>
+                <!--movie------->
+                <div class="play-movie">
+                    <div id="player"></div>
+                    <script>
+                        var player = new Clappr.Player({source: "https://storage.googleapis.com/barbie9/feee1445c42a46a6a9f9329baf09778c/bar.m3u8", parentId: "#player" ,poster:"./images/bar.jpeg"});
+                    </script>
+                
+                    <!-- <video id="video-player" class="video-js vjs-default-skin" id="m-video" controls>
+                        <source src="https://storage.googleapis.com/barbie9/feee1445c42a46a6a9f9329baf09778c/bar.m3u8" type="application/x-mpegURL">
+                        Tu navegador no admite la reproducción de videos.
+                      </video> -->
+                      <!-- <video id="m-video" controls>
+                        <source src="https://storage.googleapis.com/barbie9/feee1445c42a46a6a9f9329baf09778c/bar.m3u8" type="application/x-mpegURL">
+                    </video> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Banner-end------------->
+    <!--details=====================================-->
+    <section class="movie-details">
+        <strong>Barbie</strong>
+        <p>Barbie lleva una vida ideal en Barbielandia, allí todo es perfecto, con chupifiestas llenas de música y color, y todos los días son el mejor día. Claro que Barbie se hace algunas preguntas, cuestiones bastante incómodas que no encajan con el mundo idílico en el que ella y las demás Barbies viven. Cuando Barbie se dé cuenta de que es capaz de apoyar los talones en el suelo, y tener los pies planos, decidirá calzarse unos zapatos sin tacones y viajar hasta el mundo real.
+</p>
+    </section>
+    <!--==ScreenShots===============================-->
+    <!-- <section class="screenshots">
+        <strong>ScreenShots</strong> -->
+        <!--screenshots-container----------->
+        <!-- <div class="screen-s-container">
+            <img src="Movie-Data/Pirates-of-the-Caribbean-Salazar's-Revenge/screenshot-1.jpg" alt="">
+            <img src="Movie-Data/Pirates-of-the-Caribbean-Salazar's-Revenge/screenshot-2.jpg" alt="">
+            <img src="Movie-Data/Pirates-of-the-Caribbean-Salazar's-Revenge/screenshot-3.jpg" alt="">
+            <img src="Movie-Data/Pirates-of-the-Caribbean-Salazar's-Revenge/screenshot-4.jpg" alt="">
+        </div>
+    </section> -->
+    <!--Download====================================-->
+    <!-- <section class="download-movie"> -->
+        <!--container----------------->
+        <!-- <div class="download-container"> -->
+            <!--box---->
+            <!-- <div class="download-box">
+                <span><i class="fas fa-server"></i> Server 1</span>
+                <span>English</span>
+                <span>480p</span>
+                <a href="Movie-Data/Pirates-of-the-Caribbean-Salazar's-Revenge/Movie.mkv" download>Download</a>
+            </div> -->
+            <!--box---->
+            <!-- <div class="download-box">
+                <span><i class="fas fa-server"></i> Server 2</span>
+                <span>English</span>
+                <span>720p</span>
+                <a href="#">Download</a>
+            </div> -->
+            <!--box---->
+            <!-- <div class="download-box">
+                <span><i class="fas fa-server"></i> Server 3</span>
+                <span>English</span>
+                <span>1080p</span>
+                <a href="#">Download</a>
+            </div>
+        </div>
+    </section> -->
+    <!--==footer==============================-->
+    <!-- <footer> -->
+        <!--footer-logo--->
+        <!-- <a href="index.html" class="logo">
+            Fast<span>movie</span>
+        </a> -->
+        <!--copyright----->
+        <!-- <span class="copyright">
+            Copyright 2023 - Benjamin
+        </span>
+    </footer> -->
+    <!--==jQuery=======================================-->
+    <script src="js/jQuery.js"></script>
+    <script src="js/javawatch.js"></script>
 </body>
 </html>
+  
