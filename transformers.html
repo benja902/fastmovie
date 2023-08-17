@@ -22,16 +22,7 @@
 <script type="text/javascript"
     src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js">
 </script>
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-<style>
-    /* Estilos para el reproductor de video */
-    #video {
-      width: 320px; /* Ancho deseado */
-      height: 180px; /* Altura deseada */
-    }
-  </style>
 </head>
-
 <body>
     <!--==Scroll-Progress-bar=========================-->
     <div id="progress">
@@ -123,30 +114,12 @@
                     <i class="fas fa-times"></i>
                 </a>
                 <!--movie------->
+                <div class="play-movie">
+                    <div id="player"></div>
+                    <script>
+                        var player = new Clappr.Player({source: "https://storage.googleapis.com/barbie9/transformer/tran.m3u8", parentId: "#player" ,poster:"https://img.asmedia.epimg.net/resizer/GbmEZcHdK1TBDOnLUaWToyMZGf0=/1472x828/cloudfront-eu-central-1.images.arcpublishing.com/diarioas/25IAY3O4ZVF4LPEHALL2C7Y4YU.jpg"});
+                    </script>
                 
-                <<video id="video" controls></video>
-
-                <script>
-                  // URL del archivo M3U8
-                  const videoUrl = "https://storage.googleapis.com/barbie9/transformer/tran.m3u8";
-              
-                  if (Hls.isSupported()) {
-                    const video = document.getElementById('video');
-                    const hls = new Hls();
-              
-                    hls.loadSource(videoUrl);
-                    hls.attachMedia(video);
-              
-                    hls.on(Hls.Events.MANIFEST_PARSED, () => {
-                      video.play();
-                    });
-                  } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-                    video.src = videoUrl;
-                    video.addEventListener('canplay', () => {
-                      video.play();
-                    });
-                  }
-                </script>
                     <!-- <video id="video-player" class="video-js vjs-default-skin" id="m-video" controls>
                         <source src="https://storage.googleapis.com/barbie9/feee1445c42a46a6a9f9329baf09778c/bar.m3u8" type="application/x-mpegURL">
                         Tu navegador no admite la reproducción de videos.
@@ -154,7 +127,8 @@
                       <!-- <video id="m-video" controls>
                         <source src="https://storage.googleapis.com/barbie9/feee1445c42a46a6a9f9329baf09778c/bar.m3u8" type="application/x-mpegURL">
                     </video> -->
-               
+                </div>
+            </div>
         </div>
     </section>
     <!--Banner-end------------->
